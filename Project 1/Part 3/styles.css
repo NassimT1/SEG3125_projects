@@ -1,0 +1,473 @@
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: black;
+    padding-top: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header .logo img {
+    max-width: 150px;
+}
+
+.header .middle .links a {
+    color: rgb(239, 218, 174);
+    margin: 0 5px; 
+    margin-bottom: 10px;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.header .container {
+    margin: 0px;
+}
+
+.header .middle .links a:hover {
+    background-color: rgba(217, 182, 106, 0.336);
+    transition: 0.75s;
+}
+
+.main-image {
+    position: relative;
+    height: 100vh; /* Adjust the height as needed */
+    background: url('assets/barber_s_den3.jpg') center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better readability */
+    z-index: 1;
+}
+
+.title-container {
+    z-index: 2;
+}
+
+.title-container h1 {
+    font-size: 5.5rem; /* Adjust font size as needed */
+    margin: 0;
+    font-weight: bolder;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+.appointment-btn {
+    background-color: rgba(217, 182, 106, 0.833) !important;
+}
+
+.appointment-btn:hover {
+    background-color: rgba(217, 182, 106, 0.541) !important;
+    transition: 0.75s;
+}
+
+.appointment-btn p {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.services {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url('assets/background3.jpg') no-repeat center center; /* Set background image */
+    background-attachment: fixed;
+    background-size: cover; /* Cover the entire div */
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, 0.75); /* Semi-transparent white overlay */
+    z-index: 1;
+}
+
+.services h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+    color: white;
+}
+
+.services .row {
+    margin-top: 30px;
+}
+
+.service-item {
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2; /* Ensure service items are above the overlay */
+    color: white;
+}
+
+.service-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.service-price {
+    font-size: 1.35rem;
+    color: rgb(173, 138, 62);
+    font-weight: bolder;
+}
+
+.service-description {
+    font-size: 1.25rem;
+}
+
+.team {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url('assets/background4.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover; /* Ensure the image covers the div without stretching */
+}
+
+.team::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent overlay for better readability */
+    z-index: 1;
+}
+
+.team h1,
+.team .row {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+.team h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+
+.team {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.team h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+}
+
+.barber-block {
+    padding: 0;
+    text-align: center;
+}
+
+.barber-description {
+    color: rgb(0, 0, 0);
+    text-align: left;
+}
+
+.team h5 {
+    padding-bottom: 10px;
+}
+
+.our-work {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url('assets/background5.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover; /* Ensure the image covers the div without stretching */
+}
+
+.our-work::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better readability */
+    z-index: 1;
+}
+
+.our-work h1,
+.our-work .row {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+.our-work h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.our-work img {
+    height: 450px; /* Adjust the height as needed */
+    height: auto;
+}
+
+.about-us {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url('assets/background7.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent overlay for better readability */
+    z-index: 1;
+}
+
+.about-us h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+    color: white; /* Ensure the text is readable */
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+    color: black;
+}
+
+.about-us p {
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    color: black;
+}
+
+
+.location-hours {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url('assets/background1.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover; /* Ensure the image covers the div without stretching */
+}
+
+.location-hours::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent overlay for better readability */
+    z-index: 1;
+}
+
+.location-hours h1,
+.location-hours .location-container {
+    position: relative;
+    z-index: 2; /* Ensure text is above the overlay */
+}
+
+.location-hours h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+.location-hours .location-map, .location-details {
+    z-index: 2;
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+.location-hours .location-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.location-hours .icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.location-hours .address, .location-hours .phone, .location-hours .opening-times {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.location-map iframe {
+    height: 50vh; /* Dynamic height based on viewport height */
+    min-height: 300px; /* Minimum height */
+    border: 0;
+}
+
+.location-details a{
+    color: black;
+    text-decoration: none;
+}
+
+.booking {
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+.booking h1 {
+    color: rgb(239, 218, 174);
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.booking-btn {
+    background-color: rgb(202, 181, 135) !important;
+    color: black !important;
+    font-size: 1.5rem !important;
+    font-weight: bolder !important;
+    border-color: black !important;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.booking-btn:hover {
+    background-color: rgba(222, 192, 129, 0.886) !important;
+    transition: 0.75s;
+}
+
+.booking-details {
+    position: relative;
+    padding-top: 50px;
+    height: 100vh;
+    background: url('assets/background6.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover; /* Ensure the image covers the div without stretching */
+    padding-bottom: 50px;
+}
+
+.booking-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.92); /* Semi-transparent overlay for better readability */
+    z-index: 1;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+
+#booking-form {
+    position: relative;
+    z-index: 2;
+}
+
+.confirmation {
+    height: 100vh;
+    background: url('assets/background5.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px; /* Reduced padding to balance spacing */
+}
+
+.confirmation h1 {
+    color: rgb(239, 218, 174);
+    font-size: 3.5rem;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.confirmation-header {
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px; /* Reduced margin to balance spacing */
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+.confirmation-content {
+    border-radius: 10px;
+    text-align: center;
+}
+
+.confirmation-content p {
+    text-align: center;
+    font-size: 1.5rem; /* Increased font size slightly */
+    margin-bottom: 80px; /* Increased margin for better spacing */
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.back-btn {
+    background-color: rgba(217, 182, 106, 0.833) !important;
+    color: black !important;
+    font-size: 1.5rem !important;
+    font-weight: bolder !important;
+    border-color: black !important;
+    padding: 15px 30px; /* Added padding for better button size */
+    margin-bottom: 50px;
+}
+
+.back-btn:hover {
+    background-color: rgba(217, 182, 106, 0.541) !important;
+    transition: 0.75s;
+}

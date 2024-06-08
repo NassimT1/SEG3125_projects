@@ -1,0 +1,38 @@
+Negative:
+- Tabs/links just above image (NO)
+- Easily accessible page menu available on every page (YES)
+- More color (YES)
+- Instead of "Book Appointment", make it "Let's make an appointment" or "lock in your spot now!" (NO)
+- Add cart for products (NO)
+- Don't have the morning/afternoon/evening categories for time picker (YES)
+- More spacing around the booking confirmed notification text (YES)
+
+_______________________________________________________________________________________________________
+
+Positive:
+- Big confirmation checkmark (YES)
+- Product page (NO)
+- Booking button (YES)
+- Logo on the left side (YES)
+- Social media (Maybe)
+- Icons in contact page (Maybe)
+
+_______________________________________________________________________________________________________
+
+Changes:
+- More color
+- Removed product page
+- Easily accessible menu at the top
+- Dynamic time for date
+
+Keep:
+- Confirmation checkmark
+- Booking button
+
+To do:
+- Make checkmark golden ???
+- Change "Location and Hours" for "Contact Us"
+- Add icons (time, location, hours)
+- Add about section ??? (maybe not though)
+- Add instagram link ???
+- Fix header (make dynamic)
