@@ -4,9 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const target = document.querySelector(this.getAttribute('href'));
-            const headerHeight = document.querySelector('.header').offsetHeight; // Get the height of the header
-            const offset = headerHeight; // Add 20px extra padding
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            const headerHeight = document.querySelector('.header').offsetHeight; 
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
             window.scrollTo({
                 top: targetPosition,
@@ -19,16 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('confirmationText')) {
         const urlParams = new URLSearchParams(window.location.search);
         const barber = urlParams.get('barber');
-        const services = urlParams.getAll('service').join(', '); // Get all selected services as a comma-separated string
+        const services = urlParams.getAll('service').join(', '); // Doesn't work for some reason
         const time = urlParams.get('time');
         const date = urlParams.get('date');
 
         const confirmationText = document.getElementById('confirmationText');
 
-        // Create separate spans for each detail
         const barberSpan = document.createElement('span');
         barberSpan.textContent = barber;
-        barberSpan.classList.add('fw-bolder'); // Apply Bootstrap's bolder weight
+        barberSpan.classList.add('fw-bolder');
 
         const servicesSpan = document.createElement('span');
         servicesSpan.textContent = services;
@@ -42,22 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
         dateSpan.textContent = date;
         dateSpan.classList.add('fw-bolder');
 
-        // Build the confirmation message string
         const confirmationString = `Your appointment with ${barberSpan.outerHTML} has been confirmed for ${timeSpan.outerHTML} on ${dateSpan.outerHTML}.`;
-
         confirmationText.innerHTML = confirmationString;
     }
 
     // Booking page logic
     $(document).ready(function() {
-        // Initialize the datepicker
         $('.datepicker').datepicker({
             format: 'mm/dd/yyyy',
             startDate: '0d',
             autoclose: true
         });
 
-        // Populate time slots based on selected date
         $('#date').on('changeDate', function() {
             var selectedDate = $(this).datepicker('getDate');
             var dayOfWeek = selectedDate.getUTCDay();
@@ -67,12 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
             var openingTime, closingTime;
             if (dayOfWeek >= 1 && dayOfWeek <= 5) {
                 // Monday to Friday
-                openingTime = 8;  // 8 AM
-                closingTime = 20; // 8 PM
+                openingTime = 8;  
+                closingTime = 20; 
             } else {
                 // Saturday and Sunday
-                openingTime = 9;  // 9 AM
-                closingTime = 17; // 5 PM
+                openingTime = 9;  
+                closingTime = 17; 
             }
 
             for (var hour = openingTime; hour < closingTime; hour++) {
@@ -88,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Checkbox logic
     const services = {
         "Adult Haircut": ["Adult Haircut", "Beard", "Waxing"],
         "Student Haircut": ["Student Haircut", "Beard", "Waxing"],
@@ -96,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "Beard": ["Beard", "Adult Haircut", "Student Haircut", "Waxing", "Line Up & Taper"],
         "Waxing": ["Waxing", "Adult Haircut", "Student Haircut", "Kids Haircut", "Beard", "Line Up & Taper"]
     };
-
-    // Function to get the intersection of all selected services
     function getIntersectionOfSelectedServices(selectedServices) {
         let intersection = services[selectedServices[0]];
         selectedServices.slice(1).forEach(service => {
@@ -108,18 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('#services .form-check-input').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
-            // Temporarily enable all checkboxes
             document.querySelectorAll('#services .form-check-input').forEach(checkbox => {
                 checkbox.disabled = false;
             });
 
-            // Get all selected services
             const selectedServices = Array.from(document.querySelectorAll('#services .form-check-input:checked')).map(checkbox => checkbox.value);
-
-            // Get the intersection of all selected services
             const intersection = getIntersectionOfSelectedServices(selectedServices);
 
-            // Disable checkboxes for services not in the intersection
             document.querySelectorAll('#services .form-check-input').forEach(checkbox => {
                 if (!intersection.includes(checkbox.value)) {
                     checkbox.disabled = true;
